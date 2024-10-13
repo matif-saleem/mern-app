@@ -1,0 +1,19 @@
+version: "1.0"
+services:
+  server:
+    build: ./server
+    networks:
+      - mongo-network
+    container_name: server
+    ports:
+      - 5050:5050
+  client:
+    build: ./client
+    networks:
+      - mongo-network
+    container_name: client
+    ports:
+      - 5173:5173
+networks:
+  mongo-network:
+      external: true

@@ -7,6 +7,8 @@ services:
     environment:
     - MONGO_INITDB_ROOT_USERNAME=admin
     - MONGO_INITDB_ROOT_PASSWORD=pass
+    networks:
+      - mongo-network
     volumes:
      - mongo-data:/data/db
   mongo-exp:
@@ -17,6 +19,11 @@ services:
     - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
     - ME_CONFIG_MONGODB_ADMINPASSWORD=pass
     - ME_CONFIG_MONGODB_SERVER=mongodb
+    networks:
+      - mongo-network
 volumes:
   mongo-data:
    driver: local
+networks:
+  mongo-network:
+      external: true
