@@ -6,13 +6,56 @@ This project is based on MERN stack (MongoDB, Express, React, Node) with mulriti
 the 2nd part is to explain how we can create docker images of the complete project and interact with them.
 
 # How to run source code in your development environment
-First copy code from git url.
+1. First setup your MongoDB and Mongo express. Install both of them and check the connection.
+Use below connection string if it is stand alone MomgoDB in your machine.
 
-# How to create docker images and execute them
-1. mongodb and mongo express image
-2. mern server image
-3. mern client image
+//Use this connection string if you are connecting standalone server
+CONNECTIONURL = 'mongodb://admin:pass@localhost:27017'
 
+If you are using docker container for MongoDB then use below connection string.
+
+//Use this connection string if you are connecting from docker container server (host should be running container name like: "mern-stack-example-mongodb-1")
+//CONNECTIONURL = 'mongodb://admin:pass@mern-stack-example-mongodb-1:27017'
+How to use MongoDB as a docker container, please check below section.
+
+2. First copy code from git url: https://github.com/matif-saleem/mern-app.git and copy in your local system project folder named "MERNProjects" for example.
+
+3. Open terminal and change directoy to your project folder
+/path/MERNProjects/
+
+4. Now change directory to server and run below command
+/path/MERNProjects/server
+node --env-file=config.env server
+
+5. Now open another terminal and change directory to client and run below command
+/path/MERNProjects/client
+npm run dev
+
+Now Your server and client are up and running.
+
+6. Go to browser and run http://localhost:5173/ You will see below page. 
+
+Perform some operations to test the functionalities and check everything is working fine.
+
+# How to create docker images and containerize them
+If you want to directly 
+1. mongodb and mongo express containers
+
+   Open terminal and execute below docker-compose command.
+   docker-conpose -f /path/MERNProjects/mongo.yaml up
+
+   You can see docker execute the command and container should be up and run. Not dowm the container name which will be used as hostname in MongoDB connection string in our server.
+
+   image of mongodb container name
+
+2. mern server and client images and containerize them
+  Open terminal and execute below docker-compose command.
+   docker-conpose -f /path/MERNProjects/mernapp.yaml up
+
+You can see docker execute the command and container should be up and run.
+
+
+   
 ## Configuration of docker images
 
 
