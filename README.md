@@ -9,13 +9,13 @@ The 2nd part is to explain how we can create docker images of the complete proje
 1. First setup your MongoDB and Mongo express. Install both of them and check the connection.
 2. Use below connection string if it is stand alone MomgoDB in your machine.
   
-```_//Use this connection string if you are connecting standalone server
-CONNECTIONURL = 'mongodb://admin:pass@localhost:27017'_```
+_//Use this connection string if you are connecting standalone server
+CONNECTIONURL = 'mongodb://admin:pass@localhost:27017'_
 
 3. If you are using docker container for MongoDB then use below connection string.
 
-```_//Use this connection string if you are connecting from docker container server (host should be running container name like: "mern-stack-example-mongodb-1")
-//CONNECTIONURL = 'mongodb://admin:pass@mern-stack-example-mongodb-1:27017'_```
+_//Use this connection string if you are connecting from docker container server (host should be running container name like: "mern-stack-example-mongodb-1")
+//CONNECTIONURL = 'mongodb://admin:pass@mern-stack-example-mongodb-1:27017'_
 
 _How to use MongoDB as a docker container, please check below section._
 
