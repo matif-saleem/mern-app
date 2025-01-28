@@ -38,26 +38,25 @@ Now Your server and client are up and running.
 Perform some operations to test the functionalities and check everything is working fine.
 
 # How to create docker images and containerize them
-If you want to directly 
-1. mongodb and mongo express containers
+If you want to directly run your production ready mern app, create idocker images of server and client and execute thier containers.
+
+1. Mongodb and MongoExpress containers
 
    Open terminal and execute below docker-compose command.
    docker-conpose -f /path/MERNProjects/mongo.yaml up
 
-   You can see docker execute the command and container should be up and run. Not dowm the container name which will be used as hostname in MongoDB connection string in our server.
+You can see docker execute the command and container should be up and run. Not dowm the container name which will be used as hostname in MongoDB connection string in our server. Update your connection string in config.enf file in server folder.
 
-   image of mongodb container name
-
-2. mern server and client images and containerize them
-  Open terminal and execute below docker-compose command.
-   docker-conpose -f /path/MERNProjects/mernapp.yaml up
-
-You can see docker execute the command and container should be up and run.
-
-
+2. Go to the server folder by using /path/MERNProjects/server and create server image using docker file and run below command:
+   docker build -t mern-server:1.0 .
    
-## Configuration of docker images
+3. Go to the server folder by using /path/MERNProjects/client and create server image using docker file and run below command:
+   docker build -t mern-client:1.0 .
 
+4. Now execute below docker-compose command.
+   docker-conpose -f /path/MERNProjects/mernapp.yaml up
+   
+   You can see all four containers are up and running. Go to browser and run http://localhost:5173/
 
 # Usage
 It can be used for learning purposes as well as for basic MERN app template for your future projects.
