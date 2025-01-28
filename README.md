@@ -51,7 +51,7 @@ CONNECTIONURL = 'mongodb://admin:pass@localhost:27017'
 CONNECTIONURL = 'mongodb://admin:pass@mern-stack-example-mongodb-1:27017'
 ```
 
-Replace admin and pass with your actual credentials.
+Replace `admin` and `pass` with your actual credentials.
 
 **4. Start the Server:**
 
@@ -73,7 +73,7 @@ Open http://localhost:5173/ in your browser.
 
 ## Creating Docker Images and Containers
 
-1. Run MongoDB and Mongo Express with Docker Compose:
+**1. Run MongoDB and Mongo Express with Docker Compose:**
 
 ```
 cd mern
@@ -83,9 +83,9 @@ docker-conpose -f mongo.yaml up
 
 This command creates and starts Docker containers for MongoDB and Mongo Express. Note down the container name for MongoDB (e.g., mern-stack-example-mongodb-1), as it will be used in the server's connection string.
 
-2. Build Docker Images:
+**2. Build Docker Images:**
 
-*Server:
+* **Server:**
 
 ```
 cd server
@@ -93,7 +93,7 @@ cd server
 docker build -t mern-server:1.0 .
 ```
 
-*Client:
+* **Client:**
 
 ```
 cd client
@@ -101,7 +101,7 @@ cd client
 docker build -t mern-client:1.0 .
 ```
 
-3. Run the Application with Docker Compose:
+**3. Run the Application with Docker Compose:**
 
 ```
 cd mern
