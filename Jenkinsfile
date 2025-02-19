@@ -8,6 +8,7 @@ pipeline {
       steps {
         //scripts will go here
         echo 'building the application...'
+        echo 'application build...'
       }
     }
 
